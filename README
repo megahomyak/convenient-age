@@ -1,8 +1,12 @@
 This is a small utility to easily encrypt or decrypt messages through AGE (https://github.com/FiloSottile/age) without storing the personal private key unencrypted
 
-Requires "$CONVENIENT_AGE_STORAGE_DIRECTORY" to be set (the directory where the personal keys and the recipients' public keys will be stored)
+Requires "$CONVENIENT_AGE_STORAGE_DIRECTORY" to be set (the directory where the sender's private and public key and the recipients' public keys will be stored)
 
 Commands supported:
-./convenience.sh gen -- generate personal keys (public and private), encrypting the private key
-./convenience.sh enc $RECIPIENT_KEY_NAME -- open an $EDITOR to gather and encrypt an outgoing message (recipient key taken from file "$CONVENIENT_AGE_STORAGE_DIRECTORY/recipients/$RECIPIENT_KEY_NAME")
+./convenience.sh setup -- get the personal keys and store them, encrypting the private key
+./convenience.sh enc $RECIPIENT_PUBLIC_KEY_FILE_NAME -- open an $EDITOR to gather and encrypt an outgoing message (recipient key taken from "$CONVENIENT_AGE_STORAGE_DIRECTORY/recipients/$RECIPIENT_PUBLIC_KEY_FILE_NAME")
 ./convenience.sh dec -- open an $EDITOR to gather and decrypt an incoming message
+./convenience.sh add $RECIPIENT_PUBLIC_KEY_FILE_NAME $RECIPIENT_PUBLIC_KEY -- create the specified recipient public key file with the specified contents
+./convenience.sh list -- list all the previously added recipients
+./convenience.sh me -- show the sender's public key
+./convenience.sh rm $RECIPIENT_PUBLIC_KEY_FILE_NAME -- remove the specified recipient public key file
