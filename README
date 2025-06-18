@@ -7,6 +7,6 @@ Commands supported:
 ./convenience.sh enc $RECIPIENT_PUBLIC_KEY_FILE_NAME -- open an $EDITOR to gather and encrypt an outgoing message (recipient key taken from "$CONVENIENT_AGE_STORAGE_DIRECTORY/recipients/$RECIPIENT_PUBLIC_KEY_FILE_NAME")
 ./convenience.sh dec -- open an $EDITOR to gather and decrypt an incoming message
 ./convenience.sh add $RECIPIENT_PUBLIC_KEY_FILE_NAME $RECIPIENT_PUBLIC_KEY -- create the specified recipient public key file with the specified contents
-./convenience.sh list -- list all the previously added recipients
+./convenience.sh ls -- list all the previously added recipients
 ./convenience.sh me -- show the sender's public key
 ./convenience.sh rm $RECIPIENT_PUBLIC_KEY_FILE_NAME -- remove the specified recipient public key file
